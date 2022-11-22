@@ -13,6 +13,7 @@ import '../themes/color.dart';
 import '../utils/showSnackBar.dart';
 import '../widgets/input_decoration.dart';
 import '../widgets/main_btn_widget.dart';
+import '../widgets/uploadinput_decoration.dart';
 
 class UploadScreen extends StatefulWidget {
   const UploadScreen({Key? key}) : super(key: key);
@@ -140,7 +141,7 @@ class _UploadScreenState extends State<UploadScreen> {
         onChanged: (value) {
           description = value;
         },
-        decoration: InputDecorationWidget(
+        decoration: UploadInputDecorationWidget(
           context,
           "tell something about your inspiration. . .",
         ),
