@@ -6,6 +6,7 @@ import 'package:cnc_shop/screens/product_info_screen.dart';
 import 'package:cnc_shop/screens/profile_screen.dart';
 import 'package:cnc_shop/screens/registerGoogle_screen.dart';
 import 'package:cnc_shop/screens/register_screen.dart';
+import 'package:cnc_shop/screens/request_screen.dart';
 import 'package:cnc_shop/screens/top_up_screen.dart';
 import 'package:cnc_shop/screens/transaction_screen.dart';
 import 'package:cnc_shop/screens/upload_screen.dart';
@@ -24,5 +25,6 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   "/register": (BuildContext context) => RegisterScreen(),
   "/registerGoogle": (BuildContext context) => RegisterGoogleScreen(),
   "/homepage": (BuildContext context) => gridView(),
-  "/upload": (BuildContext context) => UploadScreen()
+  "/upload": (BuildContext context) => UploadScreen(),
+  "/request": (BuildContext context) => RequestScreen(),
 };

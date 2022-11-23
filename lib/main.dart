@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         scaffoldMessengerKey: messageKey,
         debugShowCheckedModeBanner: false,
         theme: appTheme(),
-        initialRoute: '/login',
+        initialRoute: '/request',
         routes: routes,
       ),
     );
