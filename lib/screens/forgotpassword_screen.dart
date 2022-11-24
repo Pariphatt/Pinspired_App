@@ -34,63 +34,76 @@ class _ForgotPasswordScreen extends State<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kColorsPurple,
+        backgroundColor: kColorsSky,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(0),
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/bg.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.7,
-              decoration: BoxDecoration(
-                color: kColorsWhite,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
-              ),
-              child: Form(
-                key: formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Receive an email',
-                      textAlign: TextAlign.end,
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w700,
-                          color: kColorsBlack),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    TextFormField(
-                      controller: emailController,
-                      cursorColor: Colors.white,
-                      decoration: InputDecorationWidget(context, "Email"),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      // validator: (),
-                    ),
-                    SizedBox(height: 20),
-                    ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size.fromHeight(50),
+      body: InkWell(
+        child: Padding(
+          padding: EdgeInsets.all(0),
+          child: Container(
+            // decoration: BoxDecoration(
+            //   image: DecorationImage(
+            //     image: AssetImage("assets/bg.jpg"),
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.7,
+                decoration: BoxDecoration(
+                  color: kColorsWhite,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                ),
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Receive an email',
+                        textAlign: TextAlign.end,
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w700,
+                            color: kColorsBlack),
                       ),
-                      icon: Icon(Icons.email_outlined),
-                      label: Text(
-                        'Reset Password',
+                      SizedBox(
+                        height: 20,
                       ),
-                      onPressed: () {
-                        resetPassword();
-                      },
-                    )
-                  ],
+                      TextFormField(
+                        controller: emailController,
+                        cursorColor: Colors.white,
+                        decoration: InputDecorationWidget(context, "Email"),
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        // validator: (),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      // ElevatedButton.icon(
+                      //   style: ElevatedButton.styleFrom(
+                      //     minimumSize: Size.fromHeight(50),
+                      //   ),
+                      //   icon: Icon(Icons.email_outlined),
+                      //   label: Text(
+                      //     'Reset Password',
+                      //   ),
+                      //   onPressed: () {
+                      //     resetPassword();
+                      //   },
+                      // )
+                      MainBtnWidget(
+                        colorBtn: kColorsSky,
+                        textBtn: 'Reset Password',
+                        fontWeight: FontWeight.w800,
+                        textColor: kColorsWhite,
+                        isTransparent: false,
+                        haveIcon: false,
+                        height: 50,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -109,7 +122,7 @@ class _ForgotPasswordScreen extends State<ForgotPasswordScreen> {
     } on FirebaseAuthException catch (e) {
       print(e);
       showSnackBar(e.message);
-      Navigator.of(context).pop();
+      // Navigator.of(context).pop();
     }
   }
 }
